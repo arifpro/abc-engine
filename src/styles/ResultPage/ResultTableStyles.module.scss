@@ -71,4 +71,47 @@
       }
     }
   }
+
+  .tableSection2 {
+    table {
+      // background-color: gray;
+      margin-top: 2rem;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+
+      tr {
+        background-color: white;
+
+        &:first-child {
+          th {
+            border-top-left-radius: 15px;
+          }
+          td {
+            border-top-right-radius: 15px;
+          }
+        }
+
+        &:last-child {
+          th {
+            border-bottom-left-radius: 15px;
+          }
+          td {
+            border-bottom-right-radius: 15px;
+          }
+        }
+
+        th {
+          background-color: black;
+          color: white;
+          padding: 8px 1rem;
+        }
+
+        td {
+          background-color: rgb(170, 170, 170);
+          color: black;
+          padding: 8px 1rem;
+        }
+      }
+    }
+  }
 }
