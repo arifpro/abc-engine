@@ -17,4 +17,4 @@ const setProject = (data) => async (dispatch) => {
     }
 };
 
-export default { setProject };
+export default setProject;
