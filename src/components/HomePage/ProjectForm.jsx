@@ -17,12 +17,12 @@ const ProjectForm = () => {
         projectDesc: '',
         client: '',
         contractor: '',
-        max_X: null,
-        min_X: null,
-        max_Y: null,
-        min_Y: null,
-        max_Z: null,
-        min_Z: null,
+        maxX: null,
+        minX: null,
+        maxY: null,
+        minY: null,
+        maxZ: null,
+        minZ: null,
     });
 
     const handleInputChange = (event) => {

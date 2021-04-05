@@ -16,12 +16,12 @@ const CsvInfo = ({ formData, setFormData }) => {
 
         setFormData({
             ...formData,
-            max_X: Math.max(...x),
-            min_X: Math.min(...x),
-            max_Y: Math.max(...y),
-            min_Y: Math.min(...y),
-            max_Z: Math.max(...z),
-            min_Z: Math.min(...z),
+            maxX: Math.max(...x),
+            minX: Math.min(...x),
+            maxY: Math.max(...y),
+            minY: Math.min(...y),
+            maxZ: Math.max(...z),
+            minZ: Math.min(...z),
         });
     };
 
@@ -51,24 +51,24 @@ const CsvInfo = ({ formData, setFormData }) => {
                 placeholder2="Value of min X"
                 label1="max_X"
                 label2="min_X"
-                value1={formData?.max_X}
-                value2={formData?.min_X}
+                value1={formData?.maxX}
+                value2={formData?.minX}
             />
             <CustomInput2
                 placeholder1="Value of max Y"
                 placeholder2="Value of min Y"
                 label1="max_Y"
                 label2="min_Y"
-                value1={formData?.max_Y}
-                value2={formData?.min_Y}
+                value1={formData?.maxY}
+                value2={formData?.minY}
             />
             <CustomInput2
                 placeholder1="Value of max Z"
                 placeholder2="Value of min Z"
                 label1="max_Z"
                 label2="min_Z"
-                value1={formData?.max_Z}
-                value2={formData?.min_Z}
+                value1={formData?.maxZ}
+                value2={formData?.minZ}
             />
         </div>
     );
