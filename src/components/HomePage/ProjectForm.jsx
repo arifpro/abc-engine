@@ -13,19 +13,18 @@ const ProjectForm = () => {
         projectDesc: '',
         client: '',
         contractor: '',
+        max_X: null,
+        min_X: null,
+        max_Y: null,
+        min_Y: null,
+        max_Z: null,
+        min_Z: null,
     });
-
-    //     max_X (number)
-    // - min_X (number)
-    // - max_Y (number)
-    // - min_Y (number)
-    // - max_Z (number)
-    // - min_Z (number)
 
     const handleInputChange = (event) => {
         setFormData({
             ...formData,
-            [event.target.name]: event.target.value,
+            [event.target.name]: event.target.value.trim(),
         });
     };
 

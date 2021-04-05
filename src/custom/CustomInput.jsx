@@ -8,7 +8,7 @@ const CustomInput = ({ type = 'text', placeholder, label, name, value, onChange,
             name={name}
             className="testInput"
             value={value}
-            onChange={(e) => onChange(e)}
+            onChange={onChange && ((e) => onChange(e))}
             disabled={disabled}
         />
         <style jsx>{`
