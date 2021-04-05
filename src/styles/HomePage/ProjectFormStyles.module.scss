@@ -2,25 +2,40 @@
   max-width: 500px;
   margin: 40px auto;
 
+  .projectForm__btn {
+    color: #61dafb;
+    background: black;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5rem;
+
+    &:hover {
+      color: white;
+      background: #12667d;
+    }
+  }
+
+  .textBtn {
+    background-color: #24a19c;
+    padding: 8px 20px;
+    border: 1px solid #24a19c;
+    color: #fff;
+    margin: 2px 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 7px;
+  }
+
+  .error {
+    text-align: center;
+    color: red;
+  }
+
   @media (max-width: 590px) {
     width: 300px;
   }
-}
-
-.textBtn {
-  background-color: #24a19c;
-  padding: 8px 20px;
-  border: 1px solid #24a19c;
-  color: #fff;
-  margin: 2px 5px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  border-radius: 7px;
-}
-
-.error {
-  text-align: center;
-  color: red;
 }

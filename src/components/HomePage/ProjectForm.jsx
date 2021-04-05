@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { MultiStepForm, Step } from 'react-multi-form';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import setProject from '../../redux/actions/projectActions';
 import styles from '../../styles/HomePage/ProjectFormStyles.module.scss';
 // components
@@ -47,9 +48,14 @@ const ProjectForm = () => {
                 <Step label="CSV File">
                     <CsvInfo formData={formData} setFormData={setFormData} />
                 </Step>
-                <Step label="table">
-                    <div>
-                        <h1>table</h1>
+                <Step label="All Data">
+                    <div style={{ textAlign: 'center' }}>
+                        <h1>Want to show all input field?</h1>
+                        <Link to="/result">
+                            <button type="button" className={styles.projectForm__btn}>
+                                Go to the Result page
+                            </button>
+                        </Link>
                     </div>
                 </Step>
             </MultiStepForm>
