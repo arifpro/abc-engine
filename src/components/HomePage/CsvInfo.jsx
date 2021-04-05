@@ -4,11 +4,13 @@ import ProjectInfo from './ProjectInfo';
 
 const CsvInfo = ({ formData, setFormData }) => {
     const handleForce = (rows) => {
+        const kp = [];
         const x = [];
         const y = [];
         const z = [];
 
         rows.forEach((row) => {
+            kp.push(row.kp);
             x.push(row.x);
             y.push(row.y);
             z.push(row.z);
@@ -22,6 +24,10 @@ const CsvInfo = ({ formData, setFormData }) => {
             minY: Math.min(...y),
             maxZ: Math.max(...z),
             minZ: Math.min(...z),
+            KP: kp,
+            X: x,
+            Y: y,
+            Z: z,
         });
     };
 

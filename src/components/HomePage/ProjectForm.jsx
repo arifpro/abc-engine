@@ -23,6 +23,10 @@ const ProjectForm = () => {
         minY: null,
         maxZ: null,
         minZ: null,
+        KP: null,
+        X: null,
+        Y: null,
+        Z: null,
     });
 
     const handleInputChange = (event) => {
@@ -35,7 +39,6 @@ const ProjectForm = () => {
     useEffect(() => {
         if (formData.max_X !== null) {
             dispatch(setProject(formData));
-            // setProject(formData);
         }
     }, [formData, dispatch]);
 

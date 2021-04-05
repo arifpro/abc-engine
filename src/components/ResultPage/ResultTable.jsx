@@ -1,22 +1,9 @@
-import { createRef } from 'react';
-import { connect } from 'react-redux';
-import Pdf from 'react-to-pdf';
 import styles from '../../styles/ResultPage/ResultTableStyles.module.scss';
 
-const ResultTable = ({ projectState }) => {
-    const ref = createRef();
-
-    return (
-        <main className={styles.resultTable}>
-            <Pdf targetRef={ref} filename="code-example.pdf">
-                {({ toPdf }) => (
-                    <button type="button" onClick={toPdf}>
-                        Generate Pdf
-                    </button>
-                )}
-            </Pdf>
-
-            {/* <section className={styles.tableSection} ref={ref}>
+const ResultTable = ({ projectState }) => (
+    <main className={styles.resultTable}>
+        <h1>Result Table</h1>
+        {/* <section className={styles.tableSection} ref={ref}>
                 <table>
                     <thead>
                         <tr>
@@ -60,68 +47,61 @@ const ResultTable = ({ projectState }) => {
                 </table>
             </section> */}
 
-            <section className={styles.tableSection2} ref={ref}>
-                {projectState && (
-                    <table>
-                        <tr>
-                            <th>projectName</th>
-                            <td>
-                                {projectState.projectName?.length > 10
-                                    ? `${projectState.projectName.slice(0, 12)}...`
-                                    : projectState.projectName}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>projectDesc</th>
-                            <td>
-                                {projectState.projectDesc?.length > 10
-                                    ? `${projectState.projectDesc.slice(0, 12)}...`
-                                    : projectState.projectDesc}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>client</th>
-                            <td>{projectState.client}</td>
-                        </tr>
-                        <tr>
-                            <th>contractor</th>
-                            <td>{projectState.contractor}</td>
-                        </tr>
-                        <tr>
-                            <th>max_X</th>
-                            <td>{projectState.maxX}</td>
-                        </tr>
-                        <tr>
-                            <th>min_X</th>
-                            <td>{projectState.minX}</td>
-                        </tr>
-                        <tr>
-                            <th>max_Y</th>
-                            <td>{projectState.maxY}</td>
-                        </tr>
-                        <tr>
-                            <th>min_Y</th>
-                            <td>{projectState.minY}</td>
-                        </tr>
-                        <tr>
-                            <th>max_Z</th>
-                            <td>{projectState.maxZ}</td>
-                        </tr>
-                        <tr>
-                            <th>min_Z</th>
-                            <td>{projectState.minZ}</td>
-                        </tr>
-                    </table>
-                )}
-            </section>
-        </main>
-    );
-};
+        <section className={styles.tableSection2}>
+            {projectState && (
+                <table>
+                    <tr>
+                        <th>projectName</th>
+                        <td>
+                            {projectState.projectName?.length > 10
+                                ? `${projectState.projectName.slice(0, 12)}...`
+                                : projectState.projectName}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>projectDesc</th>
+                        <td>
+                            {projectState.projectDesc?.length > 10
+                                ? `${projectState.projectDesc.slice(0, 12)}...`
+                                : projectState.projectDesc}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>client</th>
+                        <td>{projectState.client}</td>
+                    </tr>
+                    <tr>
+                        <th>contractor</th>
+                        <td>{projectState.contractor}</td>
+                    </tr>
+                    <tr>
+                        <th>max_X</th>
+                        <td>{projectState.maxX}</td>
+                    </tr>
+                    <tr>
+                        <th>min_X</th>
+                        <td>{projectState.minX}</td>
+                    </tr>
+                    <tr>
+                        <th>max_Y</th>
+                        <td>{projectState.maxY}</td>
+                    </tr>
+                    <tr>
+                        <th>min_Y</th>
+                        <td>{projectState.minY}</td>
+                    </tr>
+                    <tr>
+                        <th>max_Z</th>
+                        <td>{projectState.maxZ}</td>
+                    </tr>
+                    <tr>
+                        <th>min_Z</th>
+                        <td>{projectState.minZ}</td>
+                    </tr>
+                </table>
+            )}
+        </section>
+    </main>
+);
 
-const mapStateToProps = (state) => ({
-    projectState: state.project.projectData,
-});
-
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ResultTable);
+export default ResultTable;

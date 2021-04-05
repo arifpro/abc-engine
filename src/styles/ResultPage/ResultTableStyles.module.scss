@@ -1,5 +1,7 @@
 .resultTable {
   margin: 0 0.5rem;
+  text-align: center;
+  margin-bottom: 7rem;
 
   .tableSection {
     margin-top: 1rem;
@@ -73,9 +75,12 @@
   }
 
   .tableSection2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    
     table {
-      // background-color: gray;
-      margin-top: 2rem;
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
 
