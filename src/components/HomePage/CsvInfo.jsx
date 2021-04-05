@@ -1,5 +1,5 @@
 import CSVReader from 'react-csv-reader';
-import CustomInput2 from '../../../custom/CustomInput2';
+import CustomInput2 from '../../custom/CustomInput2';
 import ProjectInfo from './ProjectInfo';
 
 const CsvInfo = ({ formData, setFormData }) => {

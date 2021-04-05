@@ -6,6 +6,8 @@ const setProject = (data) => async (dispatch) => {
             type: projectConstants.PROJECT_REQUEST,
         });
 
+        console.log(data);
+
         dispatch({
             type: projectConstants.PROJECT_SUCCESS,
             payload: data,
@@ -13,6 +15,7 @@ const setProject = (data) => async (dispatch) => {
     } catch (e) {
         dispatch({
             type: projectConstants.PROJECT_FAILED,
+            error: e,
         });
     }
 };

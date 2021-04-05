@@ -4,4 +4,4 @@ const projectConstants = {
     PROJECT_FAILED: 'PROJECT_FAILED',
 };
 
-export default { projectConstants };
+export default projectConstants;

@@ -1,6 +1,6 @@
-import CustomInput from '../../../custom/CustomInput';
+import CustomInput from '../../custom/CustomInput';
 
-const ProjectInfo = ({ formData, handleInputChange, disabled }) => (
+const ProjectInfo = ({ formData, handleInputChange, setError, disabled }) => (
     <div>
         {!formData && <h3 style={{ textAlign: 'center' }}>Project Information</h3>}
         <CustomInput
@@ -9,6 +9,7 @@ const ProjectInfo = ({ formData, handleInputChange, disabled }) => (
             name="projectName"
             value={formData?.projectName}
             onChange={handleInputChange}
+            setError={setError}
             disabled={disabled}
         />
         <CustomInput
@@ -17,6 +18,7 @@ const ProjectInfo = ({ formData, handleInputChange, disabled }) => (
             name="projectDesc"
             value={formData?.projectDesc}
             onChange={handleInputChange}
+            setError={setError}
             disabled={disabled}
         />
         <CustomInput
@@ -25,6 +27,7 @@ const ProjectInfo = ({ formData, handleInputChange, disabled }) => (
             name="client"
             value={formData?.client}
             onChange={handleInputChange}
+            setError={setError}
             disabled={disabled}
         />
         <CustomInput
@@ -33,6 +36,7 @@ const ProjectInfo = ({ formData, handleInputChange, disabled }) => (
             name="contractor"
             value={formData?.contractor}
             onChange={handleInputChange}
+            setError={setError}
             disabled={disabled}
         />
     </div>

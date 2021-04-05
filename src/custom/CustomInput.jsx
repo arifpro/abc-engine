@@ -1,4 +1,13 @@
-const CustomInput = ({ type = 'text', placeholder, label, name, value, onChange, disabled }) => (
+const CustomInput = ({
+    type = 'text',
+    placeholder,
+    label,
+    name,
+    value,
+    setError,
+    onChange,
+    disabled,
+}) => (
     <main>
         <p style={{ fontSize: '0.9rem', margin: 0 }}>{label}</p>
         <input
@@ -9,6 +18,7 @@ const CustomInput = ({ type = 'text', placeholder, label, name, value, onChange,
             className="testInput"
             value={value}
             onChange={onChange && ((e) => onChange(e))}
+            onFocus={() => setError('')}
             disabled={disabled}
         />
         <style jsx>{`

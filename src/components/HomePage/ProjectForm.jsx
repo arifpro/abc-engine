@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
 import { MultiStepForm, Step } from 'react-multi-form';
+import { useDispatch } from 'react-redux';
+import setProject from '../../redux/actions/projectActions';
 import styles from '../../styles/HomePage/ProjectFormStyles.module.scss';
 // components
-import Confirmation from './components2/Confirmation';
-import CsvInfo from './components2/CsvInfo';
-import ProjectInfo from './components2/ProjectInfo';
+import CsvInfo from './CsvInfo';
+import ProjectInfo from './ProjectInfo';
 
 const ProjectForm = () => {
+    const dispatch = useDispatch();
     const [active, setActive] = useState(1);
+    const [error, setError] = useState('');
     const [formData, setFormData] = useState({
         projectName: '',
         projectDesc: '',
@@ -29,52 +32,60 @@ const ProjectForm = () => {
     };
 
     useEffect(() => {
-        console.log(formData);
-    }, [formData]);
+        if (formData.max_X !== null) {
+            dispatch(setProject(formData));
+            // setProject(formData);
+        }
+    }, [formData, dispatch]);
 
     return (
         <main className={styles.projectForm}>
             <MultiStepForm activeStep={active}>
                 <Step label="Project Info">
-                    <ProjectInfo handleInputChange={handleInputChange} />
+                    <ProjectInfo handleInputChange={handleInputChange} setError={setError} />
                 </Step>
                 <Step label="CSV File">
                     <CsvInfo formData={formData} setFormData={setFormData} />
                 </Step>
-                <Step label="confirmation">
-                    <Confirmation />
+                <Step label="table">
+                    <div>
+                        <h1>table</h1>
+                    </div>
                 </Step>
             </MultiStepForm>
 
+            {error !== '' && <div className={styles.error}>{error}</div>}
+
             {active !== 1 && (
-                <button type="button" className="testBtn" onClick={() => setActive(active - 1)}>
+                <button
+                    type="button"
+                    className={styles.testBtn}
+                    onClick={() => setActive(active - 1)}
+                >
                     Previous
                 </button>
             )}
             {active !== 3 && (
                 <button
                     type="button"
-                    onClick={() => setActive(active + 1)}
+                    onClick={() => {
+                        if (
+                            formData.projectName !== '' &&
+                            formData.projectDesc !== '' &&
+                            formData.client !== '' &&
+                            formData.contractor !== ''
+                        ) {
+                            setActive(active + 1);
+                        } else {
+                            setError('All fields must be provided');
+                        }
+                    }}
                     style={{ float: 'right' }}
-                    className="testBtn"
+                    className={styles.testBtn}
                 >
                     Next
                 </button>
             )}
-            <style jsx>{`
-                .textBtn {
-                    background-color: #24a19c;
-                    padding: 8px 20px;
-                    border: 1px solid #24a19c;
-                    color: #fff;
-                    margin: 2px 5px;
-                    cursor: pointer;
-                    font-size: 0.85rem;
-                    text-transform: uppercase;
-                    font-weight: 600;
-                    border-radius: 7px;
-                }
-            `}</style>
         </main>
     );
 };

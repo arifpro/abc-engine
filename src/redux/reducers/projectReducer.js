@@ -4,17 +4,10 @@ const initialState = {
     loading: false,
     error: '',
     success: '',
-    projectData: {
-        projectName: '',
-        projectDescription: '',
-        client: '',
-        contractor: '',
-    },
+    projectData: null,
 };
 
 const projectReducer = (state = initialState, action) => {
-    console.log(action.payload);
-
     switch (action.type) {
         case projectConstants.PROJECT_REQUEST:
             return {
@@ -26,7 +19,7 @@ const projectReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 success: '',
-                projectData: { ...state.projectData },
+                projectData: action.payload,
             };
         case projectConstants.PROJECT_FAILED:
             return {
