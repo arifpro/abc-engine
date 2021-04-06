@@ -7,7 +7,7 @@ const ResultChart = ({ projectState }) => {
         return newData1;
     }, []);
 
-    projectState?.KP.forEach((e) => newData.push([e, projectState?.X[e]]));
+    projectState?.KP?.forEach((e) => newData.push([e, projectState?.X[e]]));
 
     const data = useMemo(
         () => [
