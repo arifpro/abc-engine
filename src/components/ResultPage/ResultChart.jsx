@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useCallback } from 'react';
 import { Chart } from 'react-charts';
 
 const ResultChart = ({ projectState }) => {
@@ -14,13 +14,6 @@ const ResultChart = ({ projectState }) => {
             {
                 label: 'Series 1',
                 data: newData,
-                // data: [
-                //     [0, 1],
-                //     [1, 2],
-                //     [2, 4],
-                //     [3, 2],
-                //     [4, 7],
-                // ],
             },
         ],
         [newData]
@@ -34,8 +27,10 @@ const ResultChart = ({ projectState }) => {
         []
     );
 
+    const getLabel = useCallback((series) => series.label, []);
+
     return (
-        <main style={{ marginTop: '3rem', textAlign: 'center', margin: '0 3rem' }}>
+        <main style={{ marginTop: '3rem', textAlign: 'center', margin: '0 3rem', width: '55%' }}>
             {projectState && (
                 <>
                     <h1>Result Chart</h1>
@@ -46,7 +41,7 @@ const ResultChart = ({ projectState }) => {
                             height: '300px',
                         }}
                     >
-                        <Chart data={data} axes={axes} />
+                        <Chart data={data} getLabel={getLabel} axes={axes} />
                     </div>
                 </>
             )}
