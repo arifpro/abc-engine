@@ -4,81 +4,10 @@
   margin-bottom: 7rem;
 
   .tableSection {
-    margin-top: 1rem;
-    border-radius: 15px;
-
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-
-    td,
-    th {
-      text-align: center;
-      border: 1px solid #8397ac;
-    }
-
-    thead {
-      background-color: #3c444c;
-      color: white;
-
-      th {
-        padding: 10px 5px;
-      }
-    }
-
-    th {
-      &:first-child {
-        border-radius: 10px 0 0 0;
-      }
-
-      &:last-child {
-        border-radius: 0 10px 0 0;
-      }
-    }
-
-    td:last-child,
-    th:last-child {
-      text-align: center;
-    }
-
-    td:last-child {
-      font-size: 20px;
-
-      svg {
-        &:first-child {
-          color: #008000;
-          margin-right: 10px;
-          cursor: pointer;
-        }
-
-        &:last-child {
-          color: #b30000;
-          cursor: pointer;
-        }
-      }
-    }
-
-    tbody tr {
-      &:nth-child(even) {
-        background-color: #dddddd;
-      }
-
-      &:nth-child(odd) {
-        background-color: #f0f0f0;
-      }
-
-      &:hover {
-        background-color: #b1b1b1;
-      }
-    }
-  }
-
-  .tableSection2 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
+    width: 65%;
 
     table {
       margin: 0 3rem;
@@ -107,14 +36,14 @@
         }
 
         th {
-          background-color: black;
+          background-color: #3c444c;
           color: white;
           padding: 8px 1rem;
         }
 
         td {
           background-color: rgb(170, 170, 170);
-          color: black;
+          color: #3c444c;
           padding: 8px 1rem;
         }
       }

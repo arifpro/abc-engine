@@ -7,7 +7,7 @@ const Footer = () => {
         <main className={styles.footer}>
             <div className={styles.footer_primary}>
                 <section className={styles.footer_logoSection}>
-                    <img src="" alt="logo" />
+                    <img src="/logo192.png" alt="logo" />
                     <p className={styles.desc}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus
                         egestas elit, at eleifend elit ornare ut.
@@ -46,7 +46,7 @@ const Footer = () => {
             <div className={styles.footer_secondarySection}>
                 <div className={styles.footer_secondary}>
                     <section>
-                        <p>Copyright © {year} DevArif. All rights reserved.</p>
+                        <p>Copyright © {year} TheTechDevs. All rights reserved.</p>
                     </section>
                     <section className={styles.footer_secondary2}>
                         <p>

@@ -4,7 +4,7 @@ import styles from '../../styles/Layout/NavbarStyles.module.scss';
 const Navbar = () => (
     <main className={styles.navbar}>
         <Link exact to="/">
-            <img src="logo" alt="logo" height="30px" />
+            <img src="/logo192.png" alt="logo" height="30px" />
         </Link>
 
         <section>
