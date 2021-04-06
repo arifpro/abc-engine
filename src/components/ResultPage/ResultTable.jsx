@@ -2,7 +2,6 @@ import styles from '../../styles/ResultPage/ResultTableStyles.module.scss';
 
 const ResultTable = ({ projectState }) => (
     <main className={styles.resultTable}>
-        <h1>Result Table</h1>
         {/* <section className={styles.tableSection} ref={ref}>
                 <table>
                     <thead>
@@ -47,8 +46,9 @@ const ResultTable = ({ projectState }) => (
                 </table>
             </section> */}
 
-        <section className={styles.tableSection2}>
-            {projectState && (
+        {projectState && (
+            <section className={styles.tableSection2}>
+                <h1>Result Table</h1>
                 <table>
                     <tr>
                         <th>projectName</th>
@@ -99,8 +99,8 @@ const ResultTable = ({ projectState }) => (
                         <td>{projectState.minZ}</td>
                     </tr>
                 </table>
-            )}
-        </section>
+            </section>
+        )}
     </main>
 );
 
